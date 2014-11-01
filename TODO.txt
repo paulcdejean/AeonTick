@@ -1,0 +1,13 @@
+#0: Get escape key to behave.
+
+Right now it doesn't register in getch until another key is pressed afterwards. This is problematic.
+
+#1: Get F1, F2, F3, F4, F5 and numbap 5 keys to behave.
+
+Right now they are sending multiple characters, we don't like that.
+
+#2: Once our keyboard is behaving, it'd a matter of mapping keys to behavior.
+
+Each window (main screen, spell selection, help menu etc) will have a list of behavior (exit the menu, move the player up, dance around in circles etc).
+There will be a config file mapping numeric key ids to behavior.
+Once we sucessfully get the key to behavior mapping layer complete, we can stop thinking about low level stuff such as key presses forever hopefully.

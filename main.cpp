@@ -1,10 +1,26 @@
 #include <ncurses.h>
 
 int main() {
-  initscr();			/* Start curses mode 		  */
-  printw("Hello World !!!");	/* Print Hello World		  */
-  refresh();			/* Print it on to the real screen */
-  getch();			/* Wait for user input */
-  endwin();			/* End curses mode		  */
+  int ch;
+
+  initscr();
+  raw();    
+  noecho();
+  keypad(stdscr, TRUE);
+  set_escdelay(-1);
+
+  ch = getch();
+  while(true) {
+    if(ch == 3) {
+      break;
+    }
+    printw("The pressed key is ");
+    attron(A_BOLD);
+    printw("%i %c \n", ch, ch);
+    attroff(A_BOLD);
+    refresh();
+    ch = getch();
+  }
+  endwin();
   return 0;
 }
