@@ -1,10 +1,4 @@
-#0: Get escape key to behave.
-
-Right now it doesn't register in getch until another key is pressed afterwards. This is problematic.
-
-#1: Get F1, F2, F3, F4, F5 and numbap 5 keys to behave.
-
-Right now they are sending multiple characters, we don't like that.
+#1: Integrate libtermkey into the project.
 
 #2: Once our keyboard is behaving, it'd a matter of mapping keys to behavior.
 
