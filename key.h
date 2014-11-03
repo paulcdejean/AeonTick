@@ -17,20 +17,15 @@ class Key {
 };
 
 
-// Singletons are bad but I'm using one anyway. Sue me.
+// At first I made this a singleton.
+// Then I changed it to a non singleton so I'm not tempted to grab keys in random places.
 class TermKey {
  public:
-  static TermKey& instance();
+  TermKey();
   Key get_key();
   ~TermKey();
   
  private:
-  TermKey();
-  TermKey(TermKey const&){};
-  TermKey& operator=(TermKey const&){};
-  // Static points always initialize to null pointers.
-  static std::unique_ptr<TermKey> instance_p;
-
   // Hopefully I don't have to touch this stuff too often.
   ltk::TermKey* tk;
   ltk::TermKeyKey tk_key;

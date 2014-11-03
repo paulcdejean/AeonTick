@@ -1,7 +1,5 @@
 #include "key.h"
 
-std::unique_ptr<TermKey> TermKey::instance_p;
-
 TermKey::TermKey() {
   this->tk = ltk::termkey_new(0, ltk::TERMKEY_FLAG_SPACESYMBOL | ltk::TERMKEY_FLAG_CTRLC);
   if(! this->tk) {
@@ -11,11 +9,6 @@ TermKey::TermKey() {
 
 TermKey::~TermKey() {
   ltk::termkey_destroy(this->tk);
-}
-
-TermKey& TermKey::instance() {
-  static TermKey the_instance{};
-  return the_instance;
 }
 
 Key TermKey::get_key() {

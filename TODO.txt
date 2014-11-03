@@ -1,3 +1,5 @@
+#1: Implement Key's constructors.
+
 #2: Sketch out the event loop.
 
 #3: Once our keyboard is behaving, it'd a matter of mapping keys to behavior.
