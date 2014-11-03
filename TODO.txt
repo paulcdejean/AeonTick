@@ -1,4 +1,4 @@
-#1: Implement Key's constructors.
+#1: Implement Key's constructors. Hint: http://www.leonerd.org.uk/code/libtermkey/doc/termkey_strpkey.3.html
 
 #2: Sketch out the event loop.
 
