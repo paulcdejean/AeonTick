@@ -1,6 +1,6 @@
-#1: Integrate libtermkey into the project.
+#2: Sketch out the event loop.
 
-#2: Once our keyboard is behaving, it'd a matter of mapping keys to behavior.
+#3: Once our keyboard is behaving, it'd a matter of mapping keys to behavior.
 
 Each window (main screen, spell selection, help menu etc) will have a list of behavior (exit the menu, move the player up, dance around in circles etc).
 There will be a config file mapping numeric key ids to behavior.

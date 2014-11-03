@@ -1,26 +1,9 @@
 #include <ncurses.h>
+#include <iostream>
+#include "key.h" 
 
 int main() {
-  int ch;
-
-  initscr();
-  raw();    
-  noecho();
-  keypad(stdscr, TRUE);
-  set_escdelay(-1);
-
-  ch = getch();
-  while(true) {
-    if(ch == 3) {
-      break;
-    }
-    printw("The pressed key is ");
-    attron(A_BOLD);
-    printw("%i %c \n", ch, ch);
-    attroff(A_BOLD);
-    refresh();
-    ch = getch();
-  }
-  endwin();
+  Key test_key = TermKey::instance().get_key();
+  std::cout << test_key.str() << std::endl;
   return 0;
 }
