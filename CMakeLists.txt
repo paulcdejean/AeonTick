@@ -18,7 +18,7 @@ add_library(
 
 include_directories (${CURSES_INCLUDE_DIRS})
 
-add_executable (aeontick key.cpp main.cpp)
+add_executable (aeontick key.cpp termkey.cpp main.cpp)
 
 target_link_libraries (libtermkey ${CURSES_LIBRARIES})
 target_link_libraries (aeontick ${CURSES_LIBRARIES})

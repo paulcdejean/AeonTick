@@ -1,17 +1,28 @@
-#include <ncurses.h>
 #include <iostream>
+
+#include <ncurses.h>
+
+#include "termkey.h"
 #include "key.h" 
 
 int main() {
   try {
     TermKey input_thingy = TermKey();
-    Key test_key = input_thingy.get_key();
-    std::cout << test_key.get_str() << std::endl;
-    Key test_again = input_thingy.make_key("F1");
-    std::cout << test_again.get_str() << std::endl;
-    if(test_key == test_again) {
-      std::cout << "The keys are the same" << std::endl;
+
+    initscr();
+    raw();
+    noecho();
+    keypad(stdscr, TRUE);
+    
+    while(not isendwin()) {
+      Key current_key = input_thingy.get_key();
+      refresh();
+
+      if(current_key == input_thingy.make_key("C-c")) {
+	endwin();
+      }
     }
+    
     return 0;
   }
   catch(std::string e) {

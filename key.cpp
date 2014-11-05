@@ -1,26 +1,8 @@
 #include "key.h"
 
-ltk::TermKeyFormat Key::format = static_cast<ltk::TermKeyFormat>(ltk::TERMKEY_FORMAT_LONGMOD | ltk::TERMKEY_FORMAT_WRAPBRACKET);
-
-TermKey::TermKey() {
-  this->tk = ltk::termkey_new(0, ltk::TERMKEY_FLAG_SPACESYMBOL | ltk::TERMKEY_FLAG_CTRLC);
-  if(! this->tk) {
-    throw "Cannot allocate termkey instance";
-  }
-}
-
-TermKey::~TermKey() {
-  ltk::termkey_destroy(this->tk);
-}
-
-Key TermKey::get_key() {
-  ltk::termkey_waitkey(this->tk, &this->tk_key);
-  return Key(this->tk_key, this->tk);
-}
-
-Key TermKey::make_key(const std::string& key_str) {
-  return Key(key_str, this->tk);
-}
+// Not the most readable format, but one in which keys are printed the same way they're parsed.
+// I think the creators decided to test the default format but nothing else I swear to god...
+ltk::TermKeyFormat Key::format = ltk::TermKeyFormat(0);
 
 Key::Key(ltk::TermKeyKey data, ltk::TermKey* base) {
   this->data = data;
@@ -39,13 +21,17 @@ Key::Key(const std::string& key_str, ltk::TermKey* base) {
   return;
 }
 
-const std::string Key::get_str() {
-  if(this->str.empty()) {
+const std::string Key::str() {
+  if(this->key_str.empty()) {
     char cstr_buffer[50];
     termkey_strfkey(this->base, cstr_buffer, sizeof cstr_buffer, &this->data, this->format);
-    this->str = cstr_buffer;
+    this->key_str = cstr_buffer;
   }
-  return this->str;
+  return this->key_str;
+}
+
+const char* Key::cstr() {
+  return this->str().c_str();
 }
 
 bool operator==(const Key& lhs, const Key& rhs) {
