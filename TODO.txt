@@ -1,9 +1,5 @@
-#1: Implement Key's constructors. Hint: http://www.leonerd.org.uk/code/libtermkey/doc/termkey_strpkey.3.html
+#1: Implement Window class.
 
-#2: Sketch out the event loop.
+#2: Implement KeyConfig class.
 
-#3: Once our keyboard is behaving, it'd a matter of mapping keys to behavior.
-
-Each window (main screen, spell selection, help menu etc) will have a list of behavior (exit the menu, move the player up, dance around in circles etc).
-There will be a config file mapping numeric key ids to behavior.
-Once we sucessfully get the key to behavior mapping layer complete, we can stop thinking about low level stuff such as key presses forever hopefully.
+#3: Start thinking about the Game class.

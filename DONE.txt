@@ -1,1 +1,6 @@
 #1: Integrate libtermkey into the project.
+
+#2: Implement Key's constructors. Hint: http://www.leonerd.org.uk/code/libtermkey/doc/termkey_strpkey.3.html
+
+#3: Sketch out the event loop.
+See: https://docs.google.com/drawings/d/1QKzXbJgLb7fuUBg0doDArkMSnaYZAqJwPHmEC3Xg5x8/edit

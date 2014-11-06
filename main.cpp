@@ -1,25 +1,36 @@
 #include <iostream>
 
+namespace crs {
 #include <ncurses.h>
+}
 
 #include "termkey.h"
-#include "key.h" 
+#include "key.h"
+#include "keyconfig.h"
+#include "game.h"
+#include "window.h"
 
 int main() {
   try {
     TermKey input_thingy = TermKey();
+    KeyConfig key_conf = KeyConfig("derp.ini");
 
-    initscr();
-    raw();
-    noecho();
-    keypad(stdscr, TRUE);
+    crs::initscr();
+    crs::raw();
+    crs::noecho();
+    crs::keypad(crs::stdscr, true);
+
+    Game the_game = Game(Window(crs::stdscr));
     
-    while(not isendwin()) {
+    while(not crs::isendwin()) {
       Key current_key = input_thingy.get_key();
-      refresh();
-
+      Window current_window = the_game.current_window();
+      Behavior action = key_conf.get_behavior(current_window, current_key);
+      
+      the_game.run(action);
+      
       if(current_key == input_thingy.make_key("C-c")) {
-	endwin();
+	crs::endwin();
       }
     }
     
