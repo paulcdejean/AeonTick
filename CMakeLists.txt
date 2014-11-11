@@ -17,6 +17,7 @@ add_library(
 )
 
 include_directories (${CURSES_INCLUDE_DIRS})
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 configure_file (configpath.cpp.cmake configpath.cpp @ONLY)
 
