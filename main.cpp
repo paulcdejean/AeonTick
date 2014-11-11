@@ -1,6 +1,6 @@
 #include <iostream>
 
-namespace crs {
+/*namespace crs {
 #include <ncurses.h>
 }
 
@@ -8,10 +8,12 @@ namespace crs {
 #include "key.h"
 #include "keyconfig.h"
 #include "game.h"
-#include "window.h"
+#include "window.h"*/
+#include "configpath.h"
 
 int main() {
-  try {
+  std::cout << ConfigPath::bin_path << ConfigPath::conf_path << std::endl;
+  /*  try {
     TermKey input_thingy = TermKey();
     KeyConfig key_conf = KeyConfig("derp.ini");
 
@@ -41,5 +43,5 @@ int main() {
   }
   catch(...) {
     std::cout << "Unknown exception occured." << std::endl;
-  }
+    }*/
 }
