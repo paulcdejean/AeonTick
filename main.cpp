@@ -1,18 +1,23 @@
 #include <iostream>
 
-/*namespace crs {
-#include <ncurses.h>
-}
+#include <boost/filesystem.hpp>
 
-#include "termkey.h"
-#include "key.h"
-#include "keyconfig.h"
-#include "game.h"
-#include "window.h"*/
-#include "configpath.h"
+//namespace crs {
+//#include <ncurses.h>
+//}
 
-int main() {
-  std::cout << ConfigPath::bin_path << ConfigPath::conf_path << std::endl;
+//#include "termkey.h"
+//#include "key.h"
+//#include "game.h"
+//#include "window.h"
+//#include "keyconfig.h"
+#include "filepaths.h"
+
+int main(int argc, char* argv[]) {
+  FilePaths the_paths = FilePaths();
+  std::cout << the_paths.get_main_config() << std::endl;
+  
+  //std::cout << ConfigPath::bin_path << ConfigPath::conf_path << std::endl;
   /*  try {
     TermKey input_thingy = TermKey();
     KeyConfig key_conf = KeyConfig("derp.ini");
