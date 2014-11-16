@@ -29,7 +29,7 @@ SET (KEYCONFIG_FILENAME "keys.ini" CACHE STRING "The file name of the game's key
 
 configure_file (buildvars.cpp.cmake buildvars.cpp @ONLY)
 
-add_executable (aeontick keys.ini aeontick.ini config.cpp buildvars.cpp game.cpp window.cpp key.cpp termkey.cpp main.cpp)
+add_executable (aeontick key_config.cpp keys.ini aeontick.ini config.cpp buildvars.cpp game.cpp window.cpp key.cpp termkey.cpp main.cpp)
 
 target_link_libraries (libtermkey ${CURSES_LIBRARIES})
 target_link_libraries (aeontick ${CURSES_LIBRARIES})
