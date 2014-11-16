@@ -1,4 +1,4 @@
-#include "game.h"
+#include "game.hpp"
 
 Game::Game(Window starting_window) {
   this->some_window = starting_window;

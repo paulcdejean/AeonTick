@@ -4,8 +4,8 @@
 //#include "key.h"
 //#include "game.h"
 //#include "window.h"
-#include "buildvars.h"
-#include "config.h"
+#include "buildvars.hpp"
+#include "config.hpp"
 
 // This is so wrong but it feels so right.
 // I don't fully understand why, but this type of thing needs to be delcared after everything.

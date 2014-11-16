@@ -1,6 +1,6 @@
 #pragma once
 
-#include "key.h"
+#include "key.hpp"
 
 class TermKey {
  public:

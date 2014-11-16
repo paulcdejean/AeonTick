@@ -1,7 +1,7 @@
 #pragma once
 
-#include "window.h"
-#include "behavior.h"
+#include "window.hpp"
+#include "behavior.hpp"
 
 class Game {
  public:

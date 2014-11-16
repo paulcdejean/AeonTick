@@ -1,4 +1,4 @@
-#include "termkey.h"
+#include "termkey.hpp"
 
 TermKey::TermKey() {
   this->tk = ltk::termkey_new(0, ltk::TERMKEY_FLAG_SPACESYMBOL | ltk::TERMKEY_FLAG_CTRLC);

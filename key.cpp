@@ -1,4 +1,4 @@
-#include "key.h"
+#include "key.hpp"
 
 // Not the most readable format, but one in which keys are printed the same way they're parsed.
 // I think the creators decided to test the default format but nothing else I swear to god...

@@ -1,4 +1,4 @@
-#include "window.h"
+#include "window.hpp"
 
 Window::Window(crs::WINDOW* existing_window) : ncurses_window(existing_window) {}
 

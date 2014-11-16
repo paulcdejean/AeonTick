@@ -1,4 +1,4 @@
-#include "config.h"
+#include "config.hpp"
 
 Config::Config(const bfs::path& config_path) {
   if(config_path.is_absolute()) {

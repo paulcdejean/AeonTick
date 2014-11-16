@@ -8,7 +8,7 @@ namespace bfs = boost::filesystem;
 #include <boost/property_tree/ini_parser.hpp>
 namespace bpt = boost::property_tree;
 
-#include "buildvars.h"
+#include "buildvars.hpp"
 
 class Config {
  public:

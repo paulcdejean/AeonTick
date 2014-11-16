@@ -1,4 +1,4 @@
-#include "buildvars.h"
+#include "buildvars.hpp"
 
 const bfs::path BuildVars::sysconfdir = "@SYSCONFDIR@";
 const bfs::path BuildVars::mainconfig_filename = "@MAINCONFIG_FILENAME@";
