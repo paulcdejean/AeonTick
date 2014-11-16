@@ -13,11 +13,12 @@ bfs::path FilePaths::get_main_config() {
       return this->main_config;
     }
     else if(bfs::path(BuildVars::sysconfdir).is_absolute()) {
-      this->main_config = BuildVars::sysconfdir + BuildVars::mainconfig_filename;
+      this->main_config = BuildVars::sysconfdir / BuildVars::mainconfig_filename;
       return this->main_config;
     }
     else {
-      this->main_config = bfs::path(BuildVars::install_prefix + BuildVars::sysconfdir + BuildVars::mainconfig_filename);
+      this->main_config = BuildVars::install_prefix / BuildVars::sysconfdir / BuildVars::mainconfig_filename;
+      return this->main_config;
     }
   }
 }

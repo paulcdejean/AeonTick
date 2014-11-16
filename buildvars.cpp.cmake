@@ -1,5 +1,5 @@
 #include "buildvars.h"
 
-const std::string BuildVars::sysconfdir = "@SYSCONFDIR@";
-const std::string BuildVars::mainconfig_filename = "@MAINCONFIG_FILENAME@";
-const std::string BuildVars::install_prefix = "@CMAKE_INSTALL_PREFIX@";
+const bfs::path BuildVars::sysconfdir = "@SYSCONFDIR@";
+const bfs::path BuildVars::mainconfig_filename = "@MAINCONFIG_FILENAME@";
+const bfs::path BuildVars::install_prefix = "@CMAKE_INSTALL_PREFIX@";
