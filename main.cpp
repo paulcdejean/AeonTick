@@ -4,7 +4,7 @@
 //#include "key.h"
 //#include "game.h"
 //#include "window.h"
-#include "filepaths.h"
+#include "buildvars.h"
 #include "config.h"
 
 // This is so wrong but it feels so right.
@@ -15,9 +15,9 @@ namespace crs {
 
 int main(int argc, char* argv[]) {
   try {
-    FilePaths paths = FilePaths();
-    Config main_config = Config(paths.get_main_config());
-    std::cout << main_config.vars.get<std::string>("config_files.key_config") << std::endl;
+    Config main_config = BuildVars::mainconfig_filename;
+    Config key_config = bfs::path(main_config.get("config_files.key_config"));
+    std::cout << key_config.get("main_menu.a") << std::endl;
   }
   catch(std::runtime_error e) {
     std::cout << e.what() << std::endl;

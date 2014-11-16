@@ -25,10 +25,11 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 SET (BINDIR "bin" CACHE STRING "The directory where the game's binaries will be installed.")
 SET (SYSCONFDIR "etc" CACHE STRING "The directory where the game's global settings will be intalled.")
 SET (MAINCONFIG_FILENAME "aeontick.ini" CACHE STRING "The file name of the game's primary global config file.")
+SET (KEYCONFIG_FILENAME "keys.ini" CACHE STRING "The file name of the game's key binding config file.")
 
 configure_file (buildvars.cpp.cmake buildvars.cpp @ONLY)
 
-add_executable (aeontick aeontick.ini config.cpp filepaths.cpp buildvars.cpp game.cpp window.cpp key.cpp termkey.cpp main.cpp)
+add_executable (aeontick keys.ini aeontick.ini config.cpp buildvars.cpp game.cpp window.cpp key.cpp termkey.cpp main.cpp)
 
 target_link_libraries (libtermkey ${CURSES_LIBRARIES})
 target_link_libraries (aeontick ${CURSES_LIBRARIES})
@@ -37,3 +38,4 @@ target_link_libraries (aeontick libtermkey)
 
 install (TARGETS aeontick DESTINATION ${BINDIR})
 install (FILES aeontick.ini DESTINATION ${SYSCONFDIR} RENAME ${MAINCONFIG_FILENAME})
+install (FILES keys.ini DESTINATION ${SYSCONFDIR} RENAME ${KEYCONFIG_FILENAME})
