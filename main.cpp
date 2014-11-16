@@ -1,16 +1,15 @@
 #include <iostream>
-
 #include <boost/filesystem.hpp>
 
-//namespace crs {
-//#include <ncurses.h>
-//}
+namespace crs {
+#include <ncurses.h>
+}
 
-//#include "termkey.h"
-//#include "key.h"
-//#include "game.h"
-//#include "window.h"
-//#include "keyconfig.h"
+#include "termkey.h"
+#include "key.h"
+#include "game.h"
+#include "window.h"
+#include "keyconfig.h"
 #include "filepaths.h"
 
 int main(int argc, char* argv[]) {
