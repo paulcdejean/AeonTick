@@ -16,7 +16,7 @@ namespace crs {
 int main(int argc, char* argv[]) {
   try {
     Config main_config = BuildVars::mainconfig_filename;
-    Config key_config = bfs::path(main_config.get("config_files.key_config"));
+    Config key_config = main_config.get("config_files.key_config");
     std::cout << key_config.get("main_menu.a") << std::endl;
   }
   catch(std::runtime_error e) {

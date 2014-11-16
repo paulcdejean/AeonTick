@@ -15,6 +15,9 @@ Config::Config(const bfs::path& config_path) {
   return;
 }
 
+Config::Config(const std::string& config_path) : Config::Config(bfs::path(config_path)) {
+}
+
 std::string Config::get(const std::string& key) const {
   return vars.get<std::string>(key);
 }
