@@ -22,12 +22,12 @@ Key::Key(const std::string& key_str, ltk::TermKey* base) {
 }
 
 const std::string Key::str() {
-  if(this->key_str.empty()) {
+  if(key_str.empty()) {
     char cstr_buffer[50];
-    termkey_strfkey(this->base, cstr_buffer, sizeof cstr_buffer, &this->data, this->format);
-    this->key_str = cstr_buffer;
+    termkey_strfkey(this->base, cstr_buffer, sizeof cstr_buffer, &data, format);
+    key_str = cstr_buffer;
   }
-  return this->key_str;
+  return key_str;
 }
 
 const char* Key::cstr() {

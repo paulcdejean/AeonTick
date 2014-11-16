@@ -1,20 +1,27 @@
 #include <iostream>
-#include <boost/filesystem.hpp>
 
+//#include "termkey.h"
+//#include "key.h"
+//#include "game.h"
+//#include "window.h"
+#include "filepaths.h"
+#include "config.h"
+
+// This is so wrong but it feels so right.
+// I don't fully understand why, but this type of thing needs to be delcared after everything.
 namespace crs {
 #include <ncurses.h>
 }
 
-#include "termkey.h"
-#include "key.h"
-#include "game.h"
-#include "window.h"
-#include "keyconfig.h"
-#include "filepaths.h"
-
 int main(int argc, char* argv[]) {
-  FilePaths the_paths = FilePaths();
-  std::cout << the_paths.get_main_config() << std::endl;
+  try {
+    FilePaths paths = FilePaths();
+    Config main_config = Config(paths.get_main_config());
+    std::cout << main_config.vars.get<std::string>("config_files.key_config") << std::endl;
+  }
+  catch(std::runtime_error e) {
+    std::cout << e.what() << std::endl;
+  }
   
   //std::cout << ConfigPath::bin_path << ConfigPath::conf_path << std::endl;
   /*  try {

@@ -1,3 +1,9 @@
+#1 Implement Config class.
+
+#2 Implement KeyConfig and MainConfig which inherit from that class.
+
+- - - - -
+
 ???: Implement Window class.
 
 #2: Implement KeyConfig class.
