@@ -11,7 +11,7 @@ Config::Config(const bfs::path& config_path) {
     path = BuildVars::install_prefix / BuildVars::sysconfdir / config_path;
   }
   
-  read_ini(path.string(), vars);
+  bpt::read_ini(path.string(), vars);
   return;
 }
 
