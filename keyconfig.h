@@ -17,4 +17,3 @@ class KeyConfig {
  private:
   bpo::variables_map vars;
 };
-
