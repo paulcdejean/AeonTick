@@ -46,6 +46,9 @@ int main(int argc, char* argv[]) {
     }
   }
   catch(std::runtime_error e) {
+    // We gotta drop out of curses mode before we panic exit.
+    // If we don't bad things happen. Very bad things!
+    crs::endwin();
     std::cout << e.what() << std::endl;
   }
 }

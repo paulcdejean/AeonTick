@@ -33,16 +33,17 @@ Key Key::waitkey() {
   return Key(tkk);
 }
 
-const std::string Key::str() {
+const std::string& Key::str() const {
   if(key_str.empty()) {
     char cstr_buffer[50];
-    termkey_strfkey(base.get(), cstr_buffer, sizeof cstr_buffer, &data, format);
+    // A const_cast is sometimes necesary when dealing with dumb libraries.
+    termkey_strfkey(base.get(), cstr_buffer, sizeof cstr_buffer, const_cast<ltk::TermKeyKey*>(&data), format);
     key_str = cstr_buffer;
   }
   return key_str;
 }
 
-const char* Key::cstr() {
+const char* Key::cstr() const {
   return str().c_str();
 }
 

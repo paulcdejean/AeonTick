@@ -5,14 +5,14 @@ class Key {
 
   static Key waitkey();
 
-  const std::string str();
-  const char* cstr();
+  const std::string& str() const;
+  const char* cstr() const;
 
 private:
   static ltk::TermKeyFormat format;
   static TermKey base;
   ltk::TermKeyKey data;
-  std::string key_str;
+  mutable std::string key_str;
 
   friend bool operator==(const Key& lhs, const Key& rhs);
 };

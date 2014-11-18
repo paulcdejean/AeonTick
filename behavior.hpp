@@ -1,4 +1,5 @@
 enum Behavior {
+  DO_NOTHING,
   QUIT_GAME,
   MOVE_UP,
   MOVE_DOWN,
@@ -11,6 +12,7 @@ enum Behavior {
 };
 
 const static std::map<const std::string, const Behavior> behavior_map = {
+  {"DO_NOTHING", DO_NOTHING},
   {"QUIT_GAME", QUIT_GAME},
   {"MOVE_UP", MOVE_UP},
   {"MOVE_DOWN", MOVE_DOWN},
