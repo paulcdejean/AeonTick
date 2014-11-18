@@ -1,7 +1,3 @@
-#pragma once
-
-#include "key.hpp"
-
 class TermKey {
  public:
   TermKey();

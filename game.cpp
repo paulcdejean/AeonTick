@@ -1,13 +1,30 @@
+#include <map>
+
+namespace crs {
+#include <ncurses.h>
+}
+
+#include "behavior.hpp"
+#include "window.hpp"
+
 #include "game.hpp"
 
 Game::Game(Window starting_window) {
-  this->some_window = starting_window;
+  some_window = starting_window;
 }
 
-Window& Game::current_window() {
+const Window& Game::current_window() {
   return some_window;
 }
 
 void Game::run(Behavior action) {
-  return;
+  switch(action) {
+    case QUIT_GAME: {
+      crs::endwin();
+      break;
+    }
+    default: {
+      return;
+    }
+  }
 }

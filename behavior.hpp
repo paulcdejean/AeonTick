@@ -1,6 +1,5 @@
-#pragma once
-
 enum Behavior {
+  QUIT_GAME,
   MOVE_UP,
   MOVE_DOWN,
   MOVE_LEFT,
@@ -9,4 +8,16 @@ enum Behavior {
   MOVE_DOWNLEFT,
   MOVE_UPRIGHT,
   MOVE_DOWNRIGHT
+};
+
+const static std::map<const std::string, const Behavior> behavior_map = {
+  {"QUIT_GAME", QUIT_GAME},
+  {"MOVE_UP", MOVE_UP},
+  {"MOVE_DOWN", MOVE_DOWN},
+  {"MOVE_LEFT", MOVE_LEFT},
+  {"MOVE_RIGHT", MOVE_RIGHT},
+  {"MOVE_UPLEFT", MOVE_UPLEFT},
+  {"MOVE_DOWNLEFT", MOVE_DOWNLEFT},
+  {"MOVE_UPRIGHT", MOVE_UPRIGHT},
+  {"MOVE_DOWNRIGHT", MOVE_DOWNRIGHT},
 };

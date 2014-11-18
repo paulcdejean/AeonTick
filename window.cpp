@@ -1,3 +1,7 @@
+namespace crs {
+#include <ncurses.h>
+}
+
 #include "window.hpp"
 
 Window::Window(crs::WINDOW* existing_window) : ncurses_window(existing_window) {}

@@ -1,3 +1,12 @@
+#include <string>
+
+namespace ltk {
+  #include "libtermkey-0.17/termkey.h"
+}
+
+
+#include "key.hpp"
+
 #include "termkey.hpp"
 
 TermKey::TermKey() {

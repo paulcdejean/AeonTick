@@ -1,11 +1,3 @@
-#pragma once
-
-#include <string>
-
-namespace ltk {
-#include "libtermkey-0.17/termkey.h"
-}
-
 class Key {
  public:
   Key(ltk::TermKeyKey data, ltk::TermKey* base);

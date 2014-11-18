@@ -1,3 +1,12 @@
+#include <boost/filesystem.hpp>
+namespace bfs = boost::filesystem;
+
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/ini_parser.hpp>
+namespace bpt = boost::property_tree;
+
+#include "buildvars.hpp"
+
 #include "config.hpp"
 
 Config::Config(const bfs::path& config_path) {

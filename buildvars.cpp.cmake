@@ -1,3 +1,6 @@
+#include <boost/filesystem.hpp>
+namespace bfs = boost::filesystem;
+
 #include "buildvars.hpp"
 
 const bfs::path BuildVars::sysconfdir = "@SYSCONFDIR@";

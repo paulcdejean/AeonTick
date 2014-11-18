@@ -1,3 +1,10 @@
+#include <string>
+
+namespace ltk {
+#include "libtermkey-0.17/termkey.h"
+}
+
+
 #include "key.hpp"
 
 // Not the most readable format, but one in which keys are printed the same way they're parsed.
