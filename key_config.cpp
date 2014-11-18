@@ -16,13 +16,13 @@ namespace ltk {
 #include "libtermkey-0.17/termkey.h"
 }
 
-#include "key.hpp"
 #include "termkey.hpp"
-
-#include "behavior.hpp"
-
-#include "config.hpp"
 #include "window.hpp"
+
+#include "key.hpp"
+#include "behavior.hpp"
+#include "config.hpp"
+#include "game.hpp"
 
 #include "key_config.hpp"
 
@@ -34,7 +34,7 @@ KeyConfig::KeyConfig(const std::string& config_path)
   : Config(config_path) {
 }
 
-const Behavior KeyConfig::get_behavior(const Window& the_window, const Key& the_key) const {
+const Behavior KeyConfig::get_behavior(const Game& the_game, const Key& the_key) const {
   //return behavior_map.at("QUIT_GAME");
   return QUIT_GAME;
 }

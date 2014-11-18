@@ -1,6 +1,6 @@
-#1 Implement Config class.
+Refactor Key.
 
-#2 Implement KeyConfig and MainConfig which inherit from that class.
+KeyConfig still neeeds a lot of work.
 
 - - - - -
 
