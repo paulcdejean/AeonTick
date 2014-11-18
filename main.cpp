@@ -1,9 +1,32 @@
+#include <boost/filesystem.hpp>
+namespace bfs = boost::filesystem;
+
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/ini_parser.hpp>
+namespace bpt = boost::property_tree;
+
+#include <map>
+#include <string>
 #include <iostream>
 
+namespace crs {
+#include <ncurses.h>
+}
+
+namespace ltk {
+#include "libtermkey-0.17/termkey.h"
+}
+
+#include "key.hpp"
+#include "termkey.hpp"
+#include "behavior.hpp"
+#include "config.hpp"
+#include "window.hpp"
+#include "key_config.hpp"
+#include "game.hpp"
+#include "buildvars.hpp"
+
 int main(int argc, char* argv[]) {
-  std::cout << "Hello world" << std::endl;
-  return 0;
-  /*
   try {
     Config main_config = BuildVars::mainconfig_filename;
     KeyConfig key_config = KeyConfig(main_config.get("config_files.key_config"));
@@ -31,5 +54,4 @@ int main(int argc, char* argv[]) {
   catch(std::runtime_error e) {
     std::cout << e.what() << std::endl;
   }
-  */
 }
