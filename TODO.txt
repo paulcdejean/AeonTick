@@ -1,14 +1,1 @@
-KeyConfig still neeeds a lot of work.
-
-- - - - -
-
-???: Implement Window class.
-
-#2: Implement KeyConfig class.
-
-We are going to have to figure out how to get file paths working properly in the build process.
-The config files are just as much a part of the installation as bins.
-So the install path of said files, it needs to be configurable as part of the build.
-We'll not worry about "native windows" too much and keep the focus on linux and cygwin.
-
-#3: Start thinking about the Game class.
+OH BABY A TRIPLE
