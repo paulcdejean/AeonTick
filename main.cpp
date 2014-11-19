@@ -51,4 +51,8 @@ int main(int argc, char* argv[]) {
     crs::endwin();
     std::cout << e.what() << std::endl;
   }
+  catch(...) {
+    // I don't know what other types of exceptions might be caught, but just in case...
+    crs::endwin();
+  }
 }
