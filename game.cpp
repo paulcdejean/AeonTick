@@ -11,7 +11,7 @@ namespace crs {
 #include "game.hpp"
 
 void Game::draw_main_menu(Window& mm_window) {
-  mm_window.p("ＡＢＣＤＥＦＧＨＩＪ", 0, 0);
+  mm_window.p("Ａ");
 }
 
 Game::Game(Window starting_window) {

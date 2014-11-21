@@ -39,6 +39,16 @@ int main(int argc, char* argv[]) {
     crs::noecho();
     crs::start_color();
     crs::keypad(crs::stdscr, true);
+
+    // Only 256 colors can be registered.
+    // Blame ncurses...
+    // Because of this we're going to forgo background colors all together.
+    // They hurt my eyes anyway.
+    // So for now this is hard coded, it can be config filed later if needed.
+    // I really don't feel like config filing it now.
+    for(unsigned int n = 0; n < 256; ++n) {
+      crs::init_pair(n, n, 0);
+    }
     
     Game the_game = Game(Window(crs::stdscr));
 
