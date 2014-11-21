@@ -1,3 +1,5 @@
+#include <string>
+
 namespace crs {
 #include <ncurses.h>
 }
@@ -7,13 +9,17 @@ namespace crs {
 Window::Window(crs::WINDOW* existing_window) : ncurses_window(existing_window) {}
 
 Window::Window() {
-  this->ncurses_window = crs::newwin(0, 0, 0, 0);
+  ncurses_window = crs::newwin(0, 0, 0, 0);
 }
 
 Window::~Window() {
-  crs::delwin(this->ncurses_window);
+  crs::delwin(ncurses_window);
 }
 
-void Window::refresh() {
-  crs::wrefresh(this->ncurses_window);
+int Window::refresh() {
+  return crs::wrefresh(ncurses_window);
+}
+
+int Window::p(const char* c) {
+  return crs::wprintw(ncurses_window, c);
 }

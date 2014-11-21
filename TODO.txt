@@ -1,1 +1,11 @@
-OH BABY A TRIPLE
+#1 Implement the rest of the behaviors.
+
+It's just like drawing an owl m8 :^)
+
+- - - - -
+
+NOTES:
+
+Try and figure out what format to store saved games in.
+Remember we need to be able to rewind time!!!
+I'm leaning towards each saved game being a sqlite database.

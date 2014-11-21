@@ -9,7 +9,7 @@ namespace ltk {
 TermKey::TermKey() {
   tk = ltk::termkey_new(0, ltk::TERMKEY_FLAG_SPACESYMBOL | ltk::TERMKEY_FLAG_CTRLC);
   if(! tk) {
-    throw std::runtime_error("Cannot allocate termkey instance");
+    throw std::runtime_error("Cannot allocate termkey instance.");
   }
 }
 

@@ -1,9 +1,9 @@
 class Game {
  public:
   Game(Window starting_window);
-  const Window& current_window();
   void run(Behavior action);
   
  private:
-  Window some_window;
+  void draw_main_menu(Window& mm_window);
+  Window main_menu;
 };

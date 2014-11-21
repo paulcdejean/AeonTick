@@ -32,11 +32,13 @@ int main(int argc, char* argv[]) {
     Config main_config = BuildVars::mainconfig_filename;
     KeyConfig key_config = KeyConfig(main_config.get("config_files.key_config"));
 
+    setlocale(LC_ALL, "");
+
     crs::initscr();
     crs::raw();
     crs::noecho();
     crs::keypad(crs::stdscr, true);
-
+    
     Game the_game = Game(Window(crs::stdscr));
 
     while(not crs::isendwin()) {
@@ -54,5 +56,6 @@ int main(int argc, char* argv[]) {
   catch(...) {
     // I don't know what other types of exceptions might be caught, but just in case...
     crs::endwin();
+    std::cout << "A completely unknown type of exception was caught." << std::endl;
   }
 }
