@@ -54,7 +54,7 @@ class Window {
 
   int refresh();
   int p(const char* c);
-  
+  int p(const char* c, int x, int y);
  private:
   crs::WINDOW* ncurses_window;
 };

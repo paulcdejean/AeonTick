@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {
     crs::initscr();
     crs::raw();
     crs::noecho();
+    crs::start_color();
     crs::keypad(crs::stdscr, true);
     
     Game the_game = Game(Window(crs::stdscr));

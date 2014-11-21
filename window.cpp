@@ -1,4 +1,6 @@
+#include <stdexcept>
 #include <string>
+#include <iostream>
 
 namespace crs {
 #include <ncurses.h>
@@ -22,4 +24,27 @@ int Window::refresh() {
 
 int Window::p(const char* c) {
   return crs::wprintw(ncurses_window, c);
+}
+
+int Window::p(const char* c, int x, int y) {
+
+  for(unsigned int x = 0; x < 255; x++) {
+    crs::init_pair(x, x, COLOR_BLACK);
+  }
+  
+  for(unsigned int x = 0; x < 255; x++) {
+    crs::waddch(ncurses_window, 230);
+    crs::waddch(ncurses_window, 156);
+    crs::waddch(ncurses_window, 172 | x << 8);
+  }
+
+  //crs::attroff(1 << 8);
+  /*
+  for(unsigned int x = 0; x < 32; x++) {
+    crs::move(x, 0);
+    crs::waddch(ncurses_window, 230 | (1 << x));
+    crs::waddch(ncurses_window, 156 | (1 << x));
+    crs::waddch(ncurses_window, 172 | (1 << x));
+    }*/
+  return 0;
 }
