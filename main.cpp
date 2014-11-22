@@ -27,6 +27,8 @@ namespace ltk {
 #include "key_config.hpp"
 #include "buildvars.hpp"
 
+#undef stdscr
+
 int main(int argc, char* argv[]) {
   try {
     Config main_config = BuildVars::mainconfig_filename;
@@ -35,10 +37,14 @@ int main(int argc, char* argv[]) {
     setlocale(LC_ALL, "");
 
     crs::initscr();
+
+    // FUCK MACROS!
+    crs::WINDOW* initial_ncurses_window = crs::ncwrap_stdscr();
+    
     crs::raw();
     crs::noecho();
     crs::start_color();
-    crs::keypad(crs::stdscr, true);
+    crs::keypad(initial_ncurses_window, true);
 
     // Only 256 colors can be registered.
     // Blame ncurses...
@@ -49,12 +55,12 @@ int main(int argc, char* argv[]) {
     for(unsigned int n = 0; n < 256; ++n) {
       crs::init_pair(n, n, 0);
     }
-    
-    Game the_game = Game(Window(crs::stdscr));
 
+    Window main_menu = Window(initial_ncurses_window);
+    Game the_game = Game(main_menu);
+    
     while(not crs::isendwin()) {
       Behavior action = key_config.get_behavior(the_game, Key::waitkey());
-
       the_game.run(action);
     }
   }

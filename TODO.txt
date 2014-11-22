@@ -1,4 +1,9 @@
-#1 Implement the rest of the behaviors.
+* Hack libtermkey so that waitkey will detect a window resize.
+* Draw the main menu.
+
+- - - - -
+
+*  Implement the rest of the behaviors.
 
 It's just like drawing an owl m8 :^)
 

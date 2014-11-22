@@ -11,10 +11,12 @@ namespace crs {
 #include "game.hpp"
 
 void Game::draw_main_menu(Window& mm_window) {
-  mm_window.p("Ａ");
+  for(int n=0; n < 255; ++n) { 
+    mm_window.p("Ａ");
+  }
 }
 
-Game::Game(Window starting_window) {
+Game::Game(Window& starting_window) : main_menu(starting_window) {
   // Ok this one is going to be a dozy.
   // This constructor is going to initalize ALL THE THINGS.
   // There's no way around that.
@@ -29,7 +31,6 @@ Game::Game(Window starting_window) {
   // Other operations (worldgen etc) could also potentially take a noticable amount of time to run.
   // Those operations will be refered here, which is where the approach behind non instant stuff is detailed.
 
-  main_menu = starting_window;
   draw_main_menu(main_menu);
 
   // Calls to refresh are done explicitly outside of drawing functions.
@@ -50,6 +51,11 @@ void Game::run(Behavior action) {
       break;
     }
     case DO_NOTHING: {
+      break;
+    }
+    case MENU_UP: {
+      //main_menu.p("h");
+      main_menu.refresh();
       break;
     }
     default: {

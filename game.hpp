@@ -1,9 +1,9 @@
 class Game {
- public:
-  Game(Window starting_window);
+public:
+  Game(Window& starting_window);
   void run(Behavior action);
   
- private:
+private:
   void draw_main_menu(Window& mm_window);
-  Window main_menu;
+  Window& main_menu;
 };
